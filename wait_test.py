@@ -9,7 +9,7 @@ driver = webdriver.Firefox()
 driver.get("https://www.python.org")
 
 try:
-    search_results = WebDriverWait(driver, 10).until(
+    search_box = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, "input#id-search-field"))
     )
     print("do something")
