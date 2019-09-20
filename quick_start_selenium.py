@@ -25,7 +25,7 @@ search_box = driver.find_element_by_css_selector("input#id-search-field")
 search_box.send_keys(SEARCH_WORD)
 search_box.send_keys(Keys.RETURN)
 
-#  Nextボタンが無くなるまでループする:  <15-09-19, yourname> #
+#  Nextボタンが無くなるまでループする
 while True:
     # ページのロードを待機する
     try:
@@ -51,7 +51,7 @@ while True:
 
         item = {"url": url, "title": title, "description": description_text}
 
-        #  検索結果をlistに格納する:  <15-09-19, yourname> #
+        #  検索結果をlistに格納する
         contents_list.append(item)
 
     # 次のページへ移動する
@@ -72,7 +72,7 @@ while True:
 # 結果を出力する
 pprint(contents_list[:5])
 print(len(contents_list))
-
+# jsonに保存する
 with open("./search_reslut.json", "w") as f:
     json.dump(contents_list, f, indent=2)
 
